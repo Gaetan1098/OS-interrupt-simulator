@@ -1,4 +1,4 @@
-```markdown
+
 # Interrupt Simulator Project
 
 ## Overview
@@ -52,13 +52,13 @@ The **Interrupt Simulator** is a project developed to simulate the behavior of a
 
 ### Example Execution
 To run the simulator with `trace1.txt`, simply execute:
-```bash
+bash
 ./test1.sh
 
 The simulation log will be saved in `execution1.txt`.
 
 To run with `trace2.txt`:
-```bash
+bash
 ./test2.sh
 
 The log will be saved in `execution2.txt`.
@@ -79,4 +79,4 @@ The log will be saved in `execution2.txt`.
 197, 1, find vector 5 in memory position 0x000A
 198, 1, load address 0X0069 into the PC
 199, 248, END_IO
-```
+
