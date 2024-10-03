@@ -44,7 +44,7 @@ The **Interrupt Simulator** is a project developed to simulate the behavior of a
    For example, to use `trace1.txt`:
    ```bash
    ./test1.sh
-   ```
+
    This will compile the program and run the simulation using the trace file.
 
 3. **Run the Simulation**: 
@@ -54,13 +54,13 @@ The **Interrupt Simulator** is a project developed to simulate the behavior of a
 To run the simulator with `trace1.txt`, simply execute:
 ```bash
 ./test1.sh
-```
+
 The simulation log will be saved in `execution1.txt`.
 
 To run with `trace2.txt`:
 ```bash
 ./test2.sh
-```
+
 The log will be saved in `execution2.txt`.
 
 ## Key Output Log Entries
@@ -71,7 +71,7 @@ The log will be saved in `execution2.txt`.
 5. **End I/O Handling**: Details the steps taken to handle an END_IO event, including time tracking and memory vector updates.
 
 ## Example Output
-```
+
 191, 1, check priority of interrupt
 192, 1, check if masked
 193, 1, switch to kernel mode
@@ -79,8 +79,4 @@ The log will be saved in `execution2.txt`.
 197, 1, find vector 5 in memory position 0x000A
 198, 1, load address 0X0069 into the PC
 199, 248, END_IO
-```
-
-## Contact Information
-For questions or further clarifications, please contact **[Your Name]** at [Your Email Address].
 ```
