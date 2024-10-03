@@ -52,16 +52,17 @@ The **Interrupt Simulator** is a project developed to simulate the behavior of a
 
 ### Example Execution
 To run the simulator with `trace1.txt`, simply execute:
-bash
+```bash
 ./test1.sh
-
+```
 The simulation log will be saved in `execution1.txt`.
 
 To run with `trace2.txt`:
-bash
+```bash
 ./test2.sh
-
+```
 The log will be saved in `execution2.txt`.
+
 
 ## Key Output Log Entries
 1. **Priority Check**: Logs when the interrupt priority is checked.
