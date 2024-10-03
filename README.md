@@ -72,7 +72,7 @@ The log will be saved in `execution2.txt`.
 5. **End I/O Handling**: Details the steps taken to handle an END_IO event, including time tracking and memory vector updates.
 
 ## Example Output
-
+```
 191, 1, check priority of interrupt
 192, 1, check if masked
 193, 1, switch to kernel mode
@@ -80,4 +80,4 @@ The log will be saved in `execution2.txt`.
 197, 1, find vector 5 in memory position 0x000A
 198, 1, load address 0X0069 into the PC
 199, 248, END_IO
-
+```
