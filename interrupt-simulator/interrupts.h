@@ -38,4 +38,11 @@ void simulateEndIO(FILE *logFile, int *currentTime, int isrNumber, int duration,
 //Function to run the simulation and log events into the output file
 void runSimulation(struct Event *trace, int eventCount, struct VectorTableEntry *vectorTable, const char *outputFilename);
 
+//Function to run the shell script
+int runShellScript(const char *shellScript);
+
+//Function to return the trace file name from the shell script
+char *getTraceFileName(const char *shellScript);
+
+
 #endif
