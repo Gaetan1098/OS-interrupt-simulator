@@ -11,7 +11,7 @@
 500, 95, CPU execution
 595, 1, check priority of interrupt
 596, 1 , check if masked
-597, 1, switch to kernel moed
+597, 1, switch to kernel mode
 598, 3, context saved
 601, 1, find vector 20 in memory position 2804X
 602, 1, load address 0X07B7 into the PC
@@ -19,7 +19,7 @@
 721, 1, IRET
 722, 1, check priority of interrupt
 723, 1 , check if masked
-724, 1, switch to kernel moed
+724, 1, switch to kernel mode
 725, 3, context saved
 728, 1, find vector 19 in memory position 2604X
 729, 1, load address 0X0765 into the PC
@@ -39,7 +39,7 @@
 1256, 46, CPU execution
 1302, 1, check priority of interrupt
 1303, 1 , check if masked
-1304, 1, switch to kernel moed
+1304, 1, switch to kernel mode
 1305, 3, context saved
 1308, 1, find vector 16 in memory position 2004X
 1309, 1, load address 0X02DF into the PC
@@ -48,7 +48,7 @@
 1481, 90, CPU execution
 1571, 1, check priority of interrupt
 1572, 1 , check if masked
-1573, 1, switch to kernel moed
+1573, 1, switch to kernel mode
 1574, 3, context saved
 1577, 1, find vector 20 in memory position 2804X
 1578, 1, load address 0X07B7 into the PC
@@ -64,7 +64,7 @@
 2194, 1, IRET
 2195, 1, check priority of interrupt
 2196, 1 , check if masked
-2197, 1, switch to kernel moed
+2197, 1, switch to kernel mode
 2198, 3, context saved
 2201, 1, find vector 18 in memory position 2404X
 2202, 1, load address 0X060A into the PC
@@ -74,7 +74,7 @@
 2418, 99, CPU execution
 2517, 1, check priority of interrupt
 2518, 1 , check if masked
-2519, 1, switch to kernel moed
+2519, 1, switch to kernel mode
 2520, 3, context saved
 2523, 1, find vector 18 in memory position 2404X
 2524, 1, load address 0X060A into the PC
@@ -90,7 +90,7 @@
 3102, 1, IRET
 3103, 1, check priority of interrupt
 3104, 1 , check if masked
-3105, 1, switch to kernel moed
+3105, 1, switch to kernel mode
 3106, 3, context saved
 3109, 1, find vector 19 in memory position 2604X
 3110, 1, load address 0X0765 into the PC
@@ -99,7 +99,7 @@
 3464, 58, CPU execution
 3522, 1, check priority of interrupt
 3523, 1 , check if masked
-3524, 1, switch to kernel moed
+3524, 1, switch to kernel mode
 3525, 3, context saved
 3528, 1, find vector 20 in memory position 2804X
 3529, 1, load address 0X07B7 into the PC
@@ -107,7 +107,7 @@
 3720, 1, IRET
 3721, 1, check priority of interrupt
 3722, 1 , check if masked
-3723, 1, switch to kernel moed
+3723, 1, switch to kernel mode
 3724, 3, context saved
 3727, 1, find vector 23 in memory position 2e04X
 3728, 1, load address 0X028C into the PC
@@ -116,7 +116,7 @@
 3848, 16, CPU execution
 3864, 1, check priority of interrupt
 3865, 1 , check if masked
-3866, 1, switch to kernel moed
+3866, 1, switch to kernel mode
 3867, 3, context saved
 3870, 1, find vector 21 in memory position 2a04X
 3871, 1, load address 0X0523 into the PC
@@ -134,7 +134,7 @@
 4674, 79, CPU execution
 4753, 1, check priority of interrupt
 4754, 1 , check if masked
-4755, 1, switch to kernel moed
+4755, 1, switch to kernel mode
 4756, 3, context saved
 4759, 1, find vector 17 in memory position 2204X
 4760, 1, load address 0X05B3 into the PC
@@ -142,7 +142,7 @@
 5083, 1, IRET
 5084, 1, check priority of interrupt
 5085, 1 , check if masked
-5086, 1, switch to kernel moed
+5086, 1, switch to kernel mode
 5087, 3, context saved
 5090, 1, find vector 20 in memory position 2804X
 5091, 1, load address 0X07B7 into the PC
@@ -175,7 +175,7 @@
 6342, 1, IRET
 6343, 1, check priority of interrupt
 6344, 1 , check if masked
-6345, 1, switch to kernel moed
+6345, 1, switch to kernel mode
 6346, 3, context saved
 6349, 1, find vector 21 in memory position 2a04X
 6350, 1, load address 0X0523 into the PC
@@ -185,7 +185,7 @@
 6538, 90, CPU execution
 6628, 1, check priority of interrupt
 6629, 1 , check if masked
-6630, 1, switch to kernel moed
+6630, 1, switch to kernel mode
 6631, 3, context saved
 6634, 1, find vector 22 in memory position 2c04X
 6635, 1, load address 0X03B7 into the PC
@@ -195,7 +195,7 @@
 6838, 39, CPU execution
 6877, 1, check priority of interrupt
 6878, 1 , check if masked
-6879, 1, switch to kernel moed
+6879, 1, switch to kernel mode
 6880, 3, context saved
 6883, 1, find vector 20 in memory position 2804X
 6884, 1, load address 0X07B7 into the PC
@@ -204,7 +204,7 @@
 7187, 80, CPU execution
 7267, 1, check priority of interrupt
 7268, 1 , check if masked
-7269, 1, switch to kernel moed
+7269, 1, switch to kernel mode
 7270, 3, context saved
 7273, 1, find vector 24 in memory position 3004X
 7274, 1, load address 0X05E8 into the PC
@@ -212,7 +212,7 @@
 7589, 1, IRET
 7590, 1, check priority of interrupt
 7591, 1 , check if masked
-7592, 1, switch to kernel moed
+7592, 1, switch to kernel mode
 7593, 3, context saved
 7596, 1, find vector 24 in memory position 3004X
 7597, 1, load address 0X05E8 into the PC
@@ -222,7 +222,7 @@
 7817, 57, CPU execution
 7874, 1, check priority of interrupt
 7875, 1 , check if masked
-7876, 1, switch to kernel moed
+7876, 1, switch to kernel mode
 7877, 3, context saved
 7880, 1, find vector 21 in memory position 2a04X
 7881, 1, load address 0X0523 into the PC
@@ -230,7 +230,7 @@
 8171, 1, IRET
 8172, 1, check priority of interrupt
 8173, 1 , check if masked
-8174, 1, switch to kernel moed
+8174, 1, switch to kernel mode
 8175, 3, context saved
 8178, 1, find vector 17 in memory position 2204X
 8179, 1, load address 0X05B3 into the PC
@@ -264,7 +264,7 @@
 9349, 1, IRET
 9350, 1, check priority of interrupt
 9351, 1 , check if masked
-9352, 1, switch to kernel moed
+9352, 1, switch to kernel mode
 9353, 3, context saved
 9356, 1, find vector 24 in memory position 3004X
 9357, 1, load address 0X05E8 into the PC
@@ -282,7 +282,7 @@
 9889, 27, CPU execution
 9916, 1, check priority of interrupt
 9917, 1 , check if masked
-9918, 1, switch to kernel moed
+9918, 1, switch to kernel mode
 9919, 3, context saved
 9922, 1, find vector 23 in memory position 2e04X
 9923, 1, load address 0X028C into the PC
@@ -299,7 +299,7 @@
 10224, 49, CPU execution
 10273, 1, check priority of interrupt
 10274, 1 , check if masked
-10275, 1, switch to kernel moed
+10275, 1, switch to kernel mode
 10276, 3, context saved
 10279, 1, find vector 19 in memory position 2604X
 10280, 1, load address 0X0765 into the PC
@@ -307,7 +307,7 @@
 10488, 1, IRET
 10489, 1, check priority of interrupt
 10490, 1 , check if masked
-10491, 1, switch to kernel moed
+10491, 1, switch to kernel mode
 10492, 3, context saved
 10495, 1, find vector 24 in memory position 3004X
 10496, 1, load address 0X05E8 into the PC
@@ -325,7 +325,7 @@
 11116, 75, CPU execution
 11191, 1, check priority of interrupt
 11192, 1 , check if masked
-11193, 1, switch to kernel moed
+11193, 1, switch to kernel mode
 11194, 3, context saved
 11197, 1, find vector 19 in memory position 2604X
 11198, 1, load address 0X0765 into the PC
@@ -341,7 +341,7 @@
 11861, 1, IRET
 11862, 1, check priority of interrupt
 11863, 1 , check if masked
-11864, 1, switch to kernel moed
+11864, 1, switch to kernel mode
 11865, 3, context saved
 11868, 1, find vector 18 in memory position 2404X
 11869, 1, load address 0X060A into the PC
@@ -359,7 +359,7 @@
 12342, 65, CPU execution
 12407, 1, check priority of interrupt
 12408, 1 , check if masked
-12409, 1, switch to kernel moed
+12409, 1, switch to kernel mode
 12410, 3, context saved
 12413, 1, find vector 24 in memory position 3004X
 12414, 1, load address 0X05E8 into the PC
@@ -367,7 +367,7 @@
 12784, 1, IRET
 12785, 1, check priority of interrupt
 12786, 1 , check if masked
-12787, 1, switch to kernel moed
+12787, 1, switch to kernel mode
 12788, 3, context saved
 12791, 1, find vector 20 in memory position 2804X
 12792, 1, load address 0X07B7 into the PC
@@ -375,7 +375,7 @@
 13171, 1, IRET
 13172, 1, check priority of interrupt
 13173, 1 , check if masked
-13174, 1, switch to kernel moed
+13174, 1, switch to kernel mode
 13175, 3, context saved
 13178, 1, find vector 20 in memory position 2804X
 13179, 1, load address 0X07B7 into the PC
@@ -391,7 +391,7 @@
 13641, 1, IRET
 13642, 1, check priority of interrupt
 13643, 1 , check if masked
-13644, 1, switch to kernel moed
+13644, 1, switch to kernel mode
 13645, 3, context saved
 13648, 1, find vector 23 in memory position 2e04X
 13649, 1, load address 0X028C into the PC
@@ -428,7 +428,7 @@
 14958, 17, CPU execution
 14975, 1, check priority of interrupt
 14976, 1 , check if masked
-14977, 1, switch to kernel moed
+14977, 1, switch to kernel mode
 14978, 3, context saved
 14981, 1, find vector 16 in memory position 2004X
 14982, 1, load address 0X02DF into the PC
@@ -453,7 +453,7 @@
 16033, 1, IRET
 16034, 1, check priority of interrupt
 16035, 1 , check if masked
-16036, 1, switch to kernel moed
+16036, 1, switch to kernel mode
 16037, 3, context saved
 16040, 1, find vector 24 in memory position 3004X
 16041, 1, load address 0X05E8 into the PC
@@ -487,7 +487,7 @@
 17361, 73, CPU execution
 17434, 1, check priority of interrupt
 17435, 1 , check if masked
-17436, 1, switch to kernel moed
+17436, 1, switch to kernel mode
 17437, 3, context saved
 17440, 1, find vector 16 in memory position 2004X
 17441, 1, load address 0X02DF into the PC
@@ -559,7 +559,7 @@
 20250, 54, CPU execution
 20304, 1, check priority of interrupt
 20305, 1 , check if masked
-20306, 1, switch to kernel moed
+20306, 1, switch to kernel mode
 20307, 3, context saved
 20310, 1, find vector 20 in memory position 2804X
 20311, 1, load address 0X07B7 into the PC
@@ -576,7 +576,7 @@
 20833, 1, IRET
 20834, 1, check priority of interrupt
 20835, 1 , check if masked
-20836, 1, switch to kernel moed
+20836, 1, switch to kernel mode
 20837, 3, context saved
 20840, 1, find vector 21 in memory position 2a04X
 20841, 1, load address 0X0523 into the PC
@@ -584,7 +584,7 @@
 20948, 1, IRET
 20949, 1, check priority of interrupt
 20950, 1 , check if masked
-20951, 1, switch to kernel moed
+20951, 1, switch to kernel mode
 20952, 3, context saved
 20955, 1, find vector 23 in memory position 2e04X
 20956, 1, load address 0X028C into the PC
@@ -601,7 +601,7 @@
 21670, 1, IRET
 21671, 1, check priority of interrupt
 21672, 1 , check if masked
-21673, 1, switch to kernel moed
+21673, 1, switch to kernel mode
 21674, 3, context saved
 21677, 1, find vector 24 in memory position 3004X
 21678, 1, load address 0X05E8 into the PC
@@ -609,7 +609,7 @@
 21914, 1, IRET
 21915, 1, check priority of interrupt
 21916, 1 , check if masked
-21917, 1, switch to kernel moed
+21917, 1, switch to kernel mode
 21918, 3, context saved
 21921, 1, find vector 20 in memory position 2804X
 21922, 1, load address 0X07B7 into the PC
@@ -617,7 +617,7 @@
 22239, 1, IRET
 22240, 1, check priority of interrupt
 22241, 1 , check if masked
-22242, 1, switch to kernel moed
+22242, 1, switch to kernel mode
 22243, 3, context saved
 22246, 1, find vector 16 in memory position 2004X
 22247, 1, load address 0X02DF into the PC
@@ -627,7 +627,7 @@
 22718, 88, CPU execution
 22806, 1, check priority of interrupt
 22807, 1 , check if masked
-22808, 1, switch to kernel moed
+22808, 1, switch to kernel mode
 22809, 3, context saved
 22812, 1, find vector 24 in memory position 3004X
 22813, 1, load address 0X05E8 into the PC
@@ -643,7 +643,7 @@
 23403, 1, IRET
 23404, 1, check priority of interrupt
 23405, 1 , check if masked
-23406, 1, switch to kernel moed
+23406, 1, switch to kernel mode
 23407, 3, context saved
 23410, 1, find vector 17 in memory position 2204X
 23411, 1, load address 0X05B3 into the PC
@@ -652,7 +652,7 @@
 23630, 19, CPU execution
 23649, 1, check priority of interrupt
 23650, 1 , check if masked
-23651, 1, switch to kernel moed
+23651, 1, switch to kernel mode
 23652, 3, context saved
 23655, 1, find vector 24 in memory position 3004X
 23656, 1, load address 0X05E8 into the PC
@@ -683,7 +683,7 @@
 24850, 35, CPU execution
 24885, 1, check priority of interrupt
 24886, 1 , check if masked
-24887, 1, switch to kernel moed
+24887, 1, switch to kernel mode
 24888, 3, context saved
 24891, 1, find vector 18 in memory position 2404X
 24892, 1, load address 0X060A into the PC
@@ -719,7 +719,7 @@
 26020, 72, CPU execution
 26092, 1, check priority of interrupt
 26093, 1 , check if masked
-26094, 1, switch to kernel moed
+26094, 1, switch to kernel mode
 26095, 3, context saved
 26098, 1, find vector 19 in memory position 2604X
 26099, 1, load address 0X0765 into the PC
@@ -735,7 +735,7 @@
 26751, 1, IRET
 26752, 1, check priority of interrupt
 26753, 1 , check if masked
-26754, 1, switch to kernel moed
+26754, 1, switch to kernel mode
 26755, 3, context saved
 26758, 1, find vector 20 in memory position 2804X
 26759, 1, load address 0X07B7 into the PC
@@ -745,7 +745,7 @@
 26918, 36, CPU execution
 26954, 1, check priority of interrupt
 26955, 1 , check if masked
-26956, 1, switch to kernel moed
+26956, 1, switch to kernel mode
 26957, 3, context saved
 26960, 1, find vector 25 in memory position 3204X
 26961, 1, load address 0X05D3 into the PC
@@ -763,7 +763,7 @@
 27630, 46, CPU execution
 27676, 1, check priority of interrupt
 27677, 1 , check if masked
-27678, 1, switch to kernel moed
+27678, 1, switch to kernel mode
 27679, 3, context saved
 27682, 1, find vector 20 in memory position 2804X
 27683, 1, load address 0X07B7 into the PC
@@ -827,7 +827,7 @@
 29825, 41, CPU execution
 29866, 1, check priority of interrupt
 29867, 1 , check if masked
-29868, 1, switch to kernel moed
+29868, 1, switch to kernel mode
 29869, 3, context saved
 29872, 1, find vector 24 in memory position 3004X
 29873, 1, load address 0X05E8 into the PC
@@ -844,7 +844,7 @@
 30318, 52, CPU execution
 30370, 1, check priority of interrupt
 30371, 1 , check if masked
-30372, 1, switch to kernel moed
+30372, 1, switch to kernel mode
 30373, 3, context saved
 30376, 1, find vector 19 in memory position 2604X
 30377, 1, load address 0X0765 into the PC
@@ -872,7 +872,7 @@
 31449, 43, CPU execution
 31492, 1, check priority of interrupt
 31493, 1 , check if masked
-31494, 1, switch to kernel moed
+31494, 1, switch to kernel mode
 31495, 3, context saved
 31498, 1, find vector 20 in memory position 2804X
 31499, 1, load address 0X07B7 into the PC
@@ -894,7 +894,7 @@
 32469, 100, CPU execution
 32569, 1, check priority of interrupt
 32570, 1 , check if masked
-32571, 1, switch to kernel moed
+32571, 1, switch to kernel mode
 32572, 3, context saved
 32575, 1, find vector 20 in memory position 2804X
 32576, 1, load address 0X07B7 into the PC
@@ -904,7 +904,7 @@
 33061, 20, CPU execution
 33081, 1, check priority of interrupt
 33082, 1 , check if masked
-33083, 1, switch to kernel moed
+33083, 1, switch to kernel mode
 33084, 3, context saved
 33087, 1, find vector 25 in memory position 3204X
 33088, 1, load address 0X05D3 into the PC
@@ -924,7 +924,7 @@
 33658, 1, IRET
 33659, 1, check priority of interrupt
 33660, 1 , check if masked
-33661, 1, switch to kernel moed
+33661, 1, switch to kernel mode
 33662, 3, context saved
 33665, 1, find vector 20 in memory position 2804X
 33666, 1, load address 0X07B7 into the PC
@@ -951,7 +951,7 @@
 34825, 23, CPU execution
 34848, 1, check priority of interrupt
 34849, 1 , check if masked
-34850, 1, switch to kernel moed
+34850, 1, switch to kernel mode
 34851, 3, context saved
 34854, 1, find vector 19 in memory position 2604X
 34855, 1, load address 0X0765 into the PC
@@ -970,7 +970,7 @@
 35713, 1, IRET
 35714, 1, check priority of interrupt
 35715, 1 , check if masked
-35716, 1, switch to kernel moed
+35716, 1, switch to kernel mode
 35717, 3, context saved
 35720, 1, find vector 16 in memory position 2004X
 35721, 1, load address 0X02DF into the PC
@@ -987,7 +987,7 @@
 36356, 92, CPU execution
 36448, 1, check priority of interrupt
 36449, 1 , check if masked
-36450, 1, switch to kernel moed
+36450, 1, switch to kernel mode
 36451, 3, context saved
 36454, 1, find vector 17 in memory position 2204X
 36455, 1, load address 0X05B3 into the PC
@@ -1004,7 +1004,7 @@
 36953, 1, IRET
 36954, 1, check priority of interrupt
 36955, 1 , check if masked
-36956, 1, switch to kernel moed
+36956, 1, switch to kernel mode
 36957, 3, context saved
 36960, 1, find vector 20 in memory position 2804X
 36961, 1, load address 0X07B7 into the PC
@@ -1022,7 +1022,7 @@
 37714, 1, IRET
 37715, 1, check priority of interrupt
 37716, 1 , check if masked
-37717, 1, switch to kernel moed
+37717, 1, switch to kernel mode
 37718, 3, context saved
 37721, 1, find vector 21 in memory position 2a04X
 37722, 1, load address 0X0523 into the PC
@@ -1030,7 +1030,7 @@
 38112, 1, IRET
 38113, 1, check priority of interrupt
 38114, 1 , check if masked
-38115, 1, switch to kernel moed
+38115, 1, switch to kernel mode
 38116, 3, context saved
 38119, 1, find vector 21 in memory position 2a04X
 38120, 1, load address 0X0523 into the PC
@@ -1049,7 +1049,7 @@
 38738, 20, CPU execution
 38758, 1, check priority of interrupt
 38759, 1 , check if masked
-38760, 1, switch to kernel moed
+38760, 1, switch to kernel mode
 38761, 3, context saved
 38764, 1, find vector 20 in memory position 2804X
 38765, 1, load address 0X07B7 into the PC
@@ -1057,7 +1057,7 @@
 39021, 1, IRET
 39022, 1, check priority of interrupt
 39023, 1 , check if masked
-39024, 1, switch to kernel moed
+39024, 1, switch to kernel mode
 39025, 3, context saved
 39028, 1, find vector 18 in memory position 2404X
 39029, 1, load address 0X060A into the PC

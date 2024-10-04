@@ -1,2 +1,2 @@
 g++ interrupts.c -I interrupts.h -o sim
-./sim trace16.txt
+./sim ../otherTests/trace16.txt

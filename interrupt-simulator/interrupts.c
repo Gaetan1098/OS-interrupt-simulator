@@ -1,4 +1,4 @@
-// Authors: Gaetan Fodjo 101273973 and Shifat Gazi
+// Authors: Gaetan Fodjo 101273973 and Shifat Ghazi 101265285
 // SYSC4001 Assignement 1
 // Date: October 4th 2024
 
@@ -83,7 +83,7 @@ void simulateEndIO(FILE *logFile, int *currentTime, int isrNUmber, int duration,
     fprintf(logFile, "%d, 1 , check if masked\n", *currentTime);
     (*currentTime) += 1;
 
-    fprintf(logFile, "%d, 1, switch to kernel moed\n", *currentTime);
+    fprintf(logFile, "%d, 1, switch to kernel mode\n", *currentTime);
     (*currentTime) += 1;
 
     fprintf(logFile, "%d, 3, context saved\n", *currentTime);
@@ -163,6 +163,7 @@ int runShellScript(const char *shellScript){
     if (result != 0)
     {
         printf("Error executing shell script: %s\n", shellScript);
+        return -1;
     }
 
     return 1;
@@ -188,7 +189,7 @@ int main(int argc, char *argv[]) {
     struct Event trace[MAX_EVENTS]; // to hold the traced events
     struct VectorTableEntry vectorTable[VECTOR_TABLE_SIZE]; // for the vector table
 
-    readVectorTable("vector_table.txt", vectorTable);
+    readVectorTable("../additionalFiles/vector_table.txt", vectorTable);
 
     int eventCount = readTraceFile(traceFile, trace);
     if (eventCount < 0) {
@@ -204,75 +205,75 @@ int main(int argc, char *argv[]) {
         runSimulation(trace, eventCount, vectorTable, "execution2.txt");
     }
 
-    else if (strcmp(traceFile, "trace3.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution3.txt");
+    else if (strcmp(traceFile, "../otherTests/trace3.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution3.txt");
     }
 
-    else if (strcmp(traceFile, "trace4.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution4.txt");
+    else if (strcmp(traceFile, "../otherTests/trace4.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution4.txt");
     }
 
-    else if (strcmp(traceFile, "trace5.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution5.txt");
+    else if (strcmp(traceFile, "../otherTests/trace5.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution5.txt");
     }
 
-    else if (strcmp(traceFile, "trace6.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution6.txt");
+    else if (strcmp(traceFile, "../otherTests/trace6.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution6.txt");
     }
 
-    else if (strcmp(traceFile, "trace7.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution7.txt");
+    else if (strcmp(traceFile, "../otherTests/trace7.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution7.txt");
     }
 
-    else if (strcmp(traceFile, "trace8.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution8.txt");
+    else if (strcmp(traceFile, "../otherTests/trace8.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution8.txt");
     }
 
-    else if (strcmp(traceFile, "trace9.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution9.txt");
+    else if (strcmp(traceFile, "../otherTests/trace9.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution9.txt");
     }
 
-    else if (strcmp(traceFile, "trace10.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution10.txt");
+    else if (strcmp(traceFile, "../otherTests/trace10.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution10.txt");
     }
 
-    else if (strcmp(traceFile, "trace11.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution11.txt");
+    else if (strcmp(traceFile, "../otherTests/trace11.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution11.txt");
     }
 
-    else if (strcmp(traceFile, "trace12.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution12.txt");
+    else if (strcmp(traceFile, "../otherTests/trace12.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution12.txt");
     }
 
-    else if (strcmp(traceFile, "trace13.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution13.txt");
+    else if (strcmp(traceFile, "../otherTests/trace13.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution13.txt");
     }
 
-    else if (strcmp(traceFile, "trace14.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution14.txt");
+    else if (strcmp(traceFile, "../otherTests/trace14.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution14.txt");
     }
 
-    else if (strcmp(traceFile, "trace15.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution15.txt");
+    else if (strcmp(traceFile, "../otherTests/trace15.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution15.txt");
     }
 
-    else if (strcmp(traceFile, "trace16.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution16.txt");
+    else if (strcmp(traceFile, "../otherTests/trace16.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution16.txt");
     }
 
-    else if (strcmp(traceFile, "trace17.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution17.txt");
+    else if (strcmp(traceFile, "../otherTests/trace17.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution17.txt");
     }
 
-    else if (strcmp(traceFile, "trace18.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution18.txt");
+    else if (strcmp(traceFile, "../otherTests/trace18.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution18.txt");
     }
 
-    else if (strcmp(traceFile, "trace19.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution19.txt");
+    else if (strcmp(traceFile, "../otherTests/trace19.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution19.txt");
     }
-    else if (strcmp(traceFile, "trace20.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution20.txt");
+    else if (strcmp(traceFile, "../otherTests/trace20.txt") == 0) {
+        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution20.txt");
     }
 
     printf("Simulation complete. Output written to execution file.\n");
