@@ -1,50 +1,73 @@
-// Authors: Gaetan Fodjo 101273973 and Shifat Ghazi 101265285
-// SYSC4001 Assignement 1
-// Date: October 4th 2024
+//Authors: Gaetan Fodjo 101273973 and Shifat Ghazi 101265285
+//SYSC4001 Assignement 1
+//Date: October 4th 2024
 
 #include <stdlib.h>
 #include <string.h>
 #include "interrupts.h" 
 
-int readTraceFile(const char *filename, struct Event *trace){
-    FILE *file = fopen(filename, "r");
-    if(!file) {
+int readTraceFile(const char *filename, struct Event *traceEvents){
+    FILE *traceFile = fopen(filename, "r");
+    if(!traceFile) {
         printf("Error opening file: %s\n", filename);
         return -1;
     }
 
     int i = 0;
     char line[256];
-    while (fgets(line, sizeof(line), file)){
-        sscanf(line, "%[^,], %d", trace[i].type, &trace[i].duration); //Read & store  type and duration
+    while (fgets(line, sizeof(line), traceFile)){
+        sscanf(line, "%[^,], %d", traceEvents[i].type, &traceEvents[i].duration); //Read & store  type and duration
         i++;
     }
 
-    fclose(file); 
-    return i; // the number of events read
+    fclose(traceFile); 
+    return i; //the number of events read
 }
 
 void readVectorTable(const char *filename, struct VectorTableEntry *vectorTable) {
-    FILE *file = fopen(filename, "r");
-    if(!file) {
+    FILE *vectorFile = fopen(filename, "r");
+    if(!vectorFile) {
         printf("Error opening vector table file: %s\n", filename);
         return;
     }
 
     int i = 0;
     char line[256];
-    while (fgets(line, sizeof(line), file))
+    while (fgets(line, sizeof(line), vectorFile))
     {
-        sscanf(line, "%s", vectorTable[i]. memory_address); // Read memory address for each ISR
-        vectorTable[i].interrupt_number = i; // Interrupt number is the index in the vector table
+        sscanf(line, "%s", vectorTable[i]. memory_address); //Read memory address for each ISR
+        vectorTable[i].interrupt_number = i; //Interrupt number is the index in the vector table
         i++;
     }
 
-    fclose(file); 
+    fclose(vectorFile); 
+}
+
+char *getTraceFileName(const char *shellScript){
+    FILE *shellFile = fopen(shellScript, "r");
+    if(!shellFile) {
+        printf("Error opening file: %s\n", shellScript);
+        return NULL;
+    }
+
+    static char traceFileName[100];
+    char line[256];
+
+    while (fgets(line, sizeof(line), shellFile)){
+        if (strstr(line, "./sim") != NULL)
+        {
+            sscanf(line, "./sim %s", traceFileName); //Read & store trace file
+            break;
+        }
+        
+    }
+
+    fclose(shellFile); 
+    return traceFileName;
 }
 
 void simulateISR(FILE *logFile, int *currentTime, int isrNumber, int duration, struct VectorTableEntry *vectorTable){
-    // log the interrupt handling steps
+    //log the interrupt handling steps
     fprintf(logFile, "%d, 1, switch to kernel mode\n", *currentTime);
     (*currentTime) += 1;
 
@@ -57,22 +80,22 @@ void simulateISR(FILE *logFile, int *currentTime, int isrNumber, int duration, s
     fprintf(logFile, "%d, 1, load address %s into the PC\n", *currentTime, vectorTable[isrNumber].memory_address);
     (*currentTime) += 1;
     
-    // Split the duration for SYSCALL execution steps
-    int firstPhase = duration / 2;
-    int secondPhase = duration / 3;
-    int remaining = duration - (firstPhase + secondPhase);
+    //Split the duration for SYSCALL execution steps
+    int firstStep = duration / 2;
+    int secondStep = duration / 3;
+    int remaining = duration - (firstStep + secondStep);
 
-    fprintf(logFile, "%d, %d, SYSCALL: run the ISR\n", *currentTime, firstPhase); // First part of ISR execution
-    (*currentTime) += firstPhase;
+    fprintf(logFile, "%d, %d, SYSCALL: run the ISR\n", *currentTime, firstStep); //First part of ISR execution
+    (*currentTime) += firstStep;
 
-    fprintf(logFile, "%d, %d, transfer data\n", *currentTime, secondPhase); // Data transfer
-    (*currentTime) += secondPhase;
+    fprintf(logFile, "%d, %d, transfer data\n", *currentTime, secondStep); //Data transfer
+    (*currentTime) += secondStep;
 
 
-    fprintf(logFile, "%d, %d, check for errors\n", *currentTime, remaining); // Error checker
+    fprintf(logFile, "%d, %d, check for errors\n", *currentTime, remaining); //Error checker
     (*currentTime) += remaining;
 
-    fprintf(logFile, "%d, 1, IRET\n", *currentTime); // return from the interrupt
+    fprintf(logFile, "%d, 1, IRET\n", *currentTime); //return from the interrupt
     (*currentTime) += 1;
 }
 
@@ -95,72 +118,16 @@ void simulateEndIO(FILE *logFile, int *currentTime, int isrNUmber, int duration,
     fprintf(logFile, "%d, 1, load address %s into the PC\n", *currentTime, vectorTable[isrNUmber].memory_address);
     (*currentTime) += 1;
 
-    fprintf(logFile, "%d, %d, END_IO\n", *currentTime, duration); // Log the END_IO Event
+    fprintf(logFile, "%d, %d, END_IO\n", *currentTime, duration); //Log the END_IO Event
     (*currentTime) += duration;
 
-    fprintf(logFile, "%d, 1, IRET\n", *currentTime); // return from the intterupt
+    fprintf(logFile, "%d, 1, IRET\n", *currentTime); //return from the intterupt
     (*currentTime) += 1;
-}
-
-// main simulation function
-void runSimulation(struct Event *trace, int eventCount, struct VectorTableEntry *vectorTable, const char *outputFilename){
-    FILE *logFile = fopen(outputFilename, "w");
-    if(!logFile){
-        printf("Error opening log file: %s\n", outputFilename);
-        return;
-    }
-
-    int currentTime = 0;
-
-    // Loop through all the events in the trace
-    for(int i = 0; i < eventCount; i++){
-        if (strcmp(trace[i].type, "CPU") == 0){
-            fprintf(logFile, "%d, %d, CPU execution\n", currentTime, trace[i].duration);
-            currentTime += trace[i].duration;
-        }
-        
-        else if (strncmp(trace[i].type, "SYSCALL", 7) == 0){
-            // Handle SYSCALL
-            int isrNumber = atoi(trace[i].type + 7); // Extract ISR number from SYSCALL number
-            simulateISR(logFile, &currentTime, isrNumber, trace[i].duration, vectorTable);
-        }
-
-        else if (strncmp(trace[i].type , "END_IO", 6) == 0){
-            // Handle END_IO
-            int isrNumber = atoi(trace[i].type + 6); // Extract the ISR number from the END_IO call
-            simulateEndIO(logFile,&currentTime, isrNumber, trace[i].duration, vectorTable);
-        }
-    }
-
-    fclose(logFile);
-}
-
-char *getTraceFileName(const char *shellScript){
-    FILE *file = fopen(shellScript, "r");
-    if(!file) {
-        printf("Error opening file: %s\n", shellScript);
-        return NULL;
-    }
-
-    static char traceFile[100];
-    char line[256];
-
-    while (fgets(line, sizeof(line), file)){
-        if (strstr(line, "./sim") != NULL)
-        {
-            sscanf(line, "./sim %s", traceFile); //Read & store trace file
-            break;
-        }
-        
-    }
-
-    fclose(file); 
-    return traceFile;
 }
 
 int runShellScript(const char *shellScript){
     int result = system(shellScript);
-    if (result != 0)
+    if (result == -1)
     {
         printf("Error executing shell script: %s\n", shellScript);
         return -1;
@@ -169,6 +136,41 @@ int runShellScript(const char *shellScript){
     return 1;
 }
 
+void runSimulation(struct Event *traceEvents, int eventCount, struct VectorTableEntry *vectorTable, const char *outputFilename){
+    FILE *logFile = fopen(outputFilename, "w");
+    if(!logFile){
+        printf("Error opening log file: %s\n", outputFilename);
+        return;
+    }
+
+    int currentTime = 0;
+
+    //Loop through all the events in the trace
+    for(int i = 0; i < eventCount; i++){
+        if (strcmp(traceEvents[i].type, "CPU") == 0){
+            fprintf(logFile, "%d, %d, CPU execution\n", currentTime, traceEvents[i].duration);
+            currentTime += traceEvents[i].duration;
+        }
+
+        //Handle SYSCALL
+        else if (strncmp(traceEvents[i].type, "SYSCALL", 7) == 0){
+            //Extract ISR number from SYSCALL event in file and convert it into a integer
+            int isrNumber = atoi(traceEvents[i].type + 7); 
+            simulateISR(logFile, &currentTime, isrNumber, traceEvents[i].duration, vectorTable);
+        }
+
+        //Handle END_IO
+        else if (strncmp(traceEvents[i].type , "END_IO", 6) == 0){
+            //Extract ISR number from END_IO event in file and convert it into a integer
+            int isrNumber = atoi(traceEvents[i].type + 6); 
+            simulateEndIO(logFile,&currentTime, isrNumber, traceEvents[i].duration, vectorTable);
+        }
+    }
+
+    fclose(logFile);
+}
+
+//main code with shell call arguments that calls trace files and outputs to execution files
 int main(int argc, char *argv[]) {
     if (argc != 2){
         printf("Usage: %s <shell_file>\n", argv[0]);
@@ -179,101 +181,101 @@ int main(int argc, char *argv[]) {
 
     if(traceFile == NULL)
     {
-        return -1;// error extracting the trace file name
+        return -1; //error extracting the trace file name
     }
 
     if(runShellScript(argv[1]) != 1){
-        return -1; // error running the shell script
+        return -1; //error running the shell script
     }
 
-    struct Event trace[MAX_EVENTS]; // to hold the traced events
-    struct VectorTableEntry vectorTable[VECTOR_TABLE_SIZE]; // for the vector table
+    struct Event traceEvents[MAX_EVENTS]; //to hold the traced events
+    struct VectorTableEntry vectorTable[VECTOR_TABLE_SIZE]; //for the vector table
 
     readVectorTable("../additionalFiles/vector_table.txt", vectorTable);
 
-    int eventCount = readTraceFile(traceFile, trace);
+    int eventCount = readTraceFile(traceFile, traceEvents);
     if (eventCount < 0) {
-        return -1; // Error
+        return -1; //Error
     }
 
-    
+    //Logging and/or Creating the correct execution file
     if (strcmp(traceFile, "trace1.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution1.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "execution1.txt");
     } 
     
     else if (strcmp(traceFile, "trace2.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "execution2.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "execution2.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace3.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution3.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution3.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace4.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution4.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution4.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace5.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution5.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution5.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace6.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution6.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution6.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace7.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution7.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution7.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace8.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution8.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution8.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace9.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution9.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution9.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace10.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution10.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution10.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace11.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution11.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution11.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace12.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution12.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution12.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace13.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution13.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution13.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace14.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution14.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution14.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace15.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution15.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution15.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace16.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution16.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution16.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace17.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution17.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution17.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace18.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution18.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution18.txt");
     }
 
     else if (strcmp(traceFile, "../otherTests/trace19.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution19.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution19.txt");
     }
     else if (strcmp(traceFile, "../otherTests/trace20.txt") == 0) {
-        runSimulation(trace, eventCount, vectorTable, "../otherTests/execution20.txt");
+        runSimulation(traceEvents, eventCount, vectorTable, "../otherTests/execution20.txt");
     }
 
     printf("Simulation complete. Output written to execution file.\n");
