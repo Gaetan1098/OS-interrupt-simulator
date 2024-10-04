@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "interrupt-simulator"
+		},
+		{
+			"path": "additionalFiles"
+		},
+		{
+			"path": "otherTests"
+		}
+	],
+	"settings": {}
+}
