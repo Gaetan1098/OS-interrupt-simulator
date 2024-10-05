@@ -1,8 +1,6 @@
 #ifndef INTERRUPTS_H
 
-//Authors: Gaetan Fodjo 101273973 and Shifat Ghazi 101265285
-//SYSC4001 Assignement 1
-//Date: October 4th 2024
+//Authors: Gaetan Fodjo and Shifat Ghazi
 
 #define INTERRUPTS_H
 #include <stdio.h>

@@ -1,6 +1,4 @@
-//Authors: Gaetan Fodjo 101273973 and Shifat Ghazi 101265285
-//SYSC4001 Assignement 1
-//Date: October 4th 2024
+//Authors: Gaetan Fodjo  and Shifat Ghazi 
 
 #include <stdlib.h>
 #include <string.h>
@@ -71,8 +69,10 @@ void simulateISR(FILE *logFile, int *currentTime, int isrNumber, int duration, s
     fprintf(logFile, "%d, 1, switch to kernel mode\n", *currentTime);
     (*currentTime) += 1;
 
-    fprintf(logFile, "%d, 3, context saved\n", *currentTime);
-    (*currentTime) += 3;
+    //generating random number from 1-3 
+    int contextDuration = rand() % (3) + 1;
+    fprintf(logFile, "%d, %d, context saved\n", *currentTime, contextDuration);
+    (*currentTime) += contextDuration;
 
     fprintf(logFile, "%d, 1, find vector %d in memory position 0x%04X\n", *currentTime , isrNumber, isrNumber*2);
     (*currentTime) += 1;
@@ -103,14 +103,15 @@ void simulateEndIO(FILE *logFile, int *currentTime, int isrNUmber, int duration,
     fprintf(logFile, "%d, 1, check priority of interrupt\n", *currentTime);
     (*currentTime) += 1;
 
-    fprintf(logFile, "%d, 1 , check if masked\n", *currentTime);
+    fprintf(logFile, "%d, 1, check if masked\n", *currentTime);
     (*currentTime) += 1;
 
     fprintf(logFile, "%d, 1, switch to kernel mode\n", *currentTime);
     (*currentTime) += 1;
 
-    fprintf(logFile, "%d, 3, context saved\n", *currentTime);
-    (*currentTime) += 3;
+    int contextDuration = rand() % (3) + 1;
+    fprintf(logFile, "%d, %d, context saved\n", *currentTime, contextDuration);
+    (*currentTime) += contextDuration;
 
     fprintf(logFile, "%d, 1, find vector %d in memory position %x04X\n", *currentTime, isrNUmber, isrNUmber*2);
     (*currentTime) += 1;
@@ -198,7 +199,7 @@ int main(int argc, char *argv[]) {
         return -1; //Error
     }
 
-    //Logging and/or Creating the correct execution file
+    //TO RUN TESTS 3-20 MUST USE COMMAND: ./interrupts ../OtherTests/TestX.sh | X being the test numer (3-20) |interrupts is the name of the executable, name it whatever youe like, in our case its sim (gcc interrupts.c -o interrupts)
     if (strcmp(traceFile, "trace1.txt") == 0) {
         runSimulation(traceEvents, eventCount, vectorTable, "execution1.txt");
     } 
