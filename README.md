@@ -1,4 +1,3 @@
-markdown
 # Interrupt Simulator
 
 This project simulates an interrupt-driven CPU, focusing on how different types of work (CPU execution, I/O, system calls, and overhead) are handled in an operating system environment. It parses execution logs and analyzes the time spent on each type of work to calculate ratios and performance metrics, providing a comprehensive view of how interrupts affect system performance.
