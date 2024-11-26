@@ -80,10 +80,12 @@ The system_status file logs the state of the system during the simulation:
 
 ## Techniques Used
 
-- **Interrupt Handling in C**: Demonstrates handling of interrupts, system calls, and I/O events.
-- **File Parsing in Python**: Python’s regular expressions are used to parse execution logs and extract relevant details.
-- **Excel File Generation**: `pandas` and `openpyxl` are used to generate detailed performance reports in Excel format.
-- **Shell Scripting**: Automates the process of compiling and running the simulator for different trace files.
+- **Interrupt Handling in C**: Simulates the handling of interrupts, system calls (e.g., `fork()`, `exec()`), and I/O events, managing process scheduling and memory allocation.
+- **Process Scheduling and Memory Management**: Implements **Process Control Block (PCB) Scheduling** and **Fixed Partition Memory Allocation** to simulate process creation, execution, and memory management.
+- **Log Parsing in Python**: Python is used to parse execution logs, calculate performance metrics (e.g., CPU, I/O, and overhead ratios), and generate detailed analysis reports.
+- **Excel File Generation**: Uses **pandas** and **openpyxl** to export performance data into Excel format for easy analysis.
+- **Shell Scripting**: Automates the compilation and execution of the simulator, facilitating testing with different trace files and inputs.
+
 
 ## How to Run
 
