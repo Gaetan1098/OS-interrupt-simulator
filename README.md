@@ -64,6 +64,18 @@ Program files are used by the simulator to simulate executable programs:
 - **Execution Flow**: When the exec() system call is invoked, the corresponding program file is loaded into memory, and the simulation progresses accordingly.
 - **Memory Allocation**: The simulator uses the program files to allocate the appropriate memory partitions for execution.
 
+### 7. **Vector Table File (vector_table.txt)**
+The vector table file defines the interrupt vector table used in the simulation
+
+### 8. **System status file(system_status.txt)**
+The system_status file logs the state of the system during the simulation:
+
+- **Process Tracking**: Displays the PID, program name, memory partition, and size of each process in the system.
+- **Status Updates**: Records the system's state at different time intervals, providing an overview of active processes and memory usage.
+- **Performance Analysis**: Helps track the progress of processes and memory allocation, essential for understanding the behavior of the simulation.
+
+
+
 
 
 ## Techniques Used
