@@ -24,10 +24,11 @@ The interrupt simulator models how a CPU interacts with interrupts, system calls
 |-- interrupts.c            # Main simulator code in C
 |-- interrupts.h            # Header file for simulator
 |-- execution_analyzer.py    # Python script for log analysis
-|-- trace1.txt              # Sample trace file
-|-- execution1.txt          # Sample execution log file
+|-- trace.txt              # Sample trace file
+|-- execution.txt          # Sample execution log file
 |-- execution1_summary.xlsx  # Example output Excel summary
-|-- test1.sh                # Shell script to run the simulator with trace1.txt
+|-- test.sh                # Shell script to run the simulator
+|-- external_files.txt      #List of seperate program files
 ```
 
 ## Key Components
