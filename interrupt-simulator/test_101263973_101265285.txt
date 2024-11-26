@@ -1,4 +1,0 @@
-#! /bin/bash
-gcc interrupts_101263973_101265285.c -I interrupts_101263973_101265285.h -o sim
-
-./sim trace_101263973_101265285.txt execution_101263973_101265285.txt
