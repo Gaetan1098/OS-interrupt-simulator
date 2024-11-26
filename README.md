@@ -28,7 +28,10 @@ The interrupt simulator models how a CPU interacts with interrupts, system calls
 |-- execution.txt          # Sample execution log file
 |-- execution1_summary.xlsx  # Example output Excel summary
 |-- test.sh                # Shell script to run the simulator
-|-- external_files.txt      #List of seperate program files
+|-- external_files.txt      # List of seperate program files
+|-- programX.txt            # Program file that contains instructions and/or creating process children.
+|-- system_status.txt      # PCB Scheduler table, keeping track of partitions, IDs of all processes.
+|-- vector_table.txt       # List of vectors to be accessed by events during execution.
 ```
 
 ## Key Components
