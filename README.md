@@ -57,6 +57,12 @@ These scripts automate the process of compiling and running the simulator with a
 ### 5. **Execution Files(execution.txt)**
 The execution.txt file logs the system's activities during the simulation
 
+### 6. **Program Files (programX.txt)**  
+Program files are used by the simulator to simulate executable programs:
+
+- **Program Input**: Contains the program name and its memory size, which are used when processes are executed or allocated memory.
+- **Execution Flow**: When the exec() system call is invoked, the corresponding program file is loaded into memory, and the simulation progresses accordingly.
+- **Memory Allocation**: The simulator uses the program files to allocate the appropriate memory partitions for execution.
 
 
 
