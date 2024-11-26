@@ -14,9 +14,9 @@ This project simulates an interrupt-driven CPU, focusing on how different types 
 
 ## Overview
 The interrupt simulator models how a CPU interacts with interrupts, system calls, and I/O events during execution. The project includes:
-1. **Interrupt Handling Simulation** - Written in C, it processes trace files that describe a sequence of CPU instructions, system calls, and I/O events.
-2. **Log Analysis** - A Python script analyzes the simulator's execution logs and calculates the CPU, I/O, and overhead ratios, exporting the results to an Excel sheet.
-3. **Automation** - Shell scripts compile and run the simulator with different trace files, allowing for easy testing and data generation.
+1. **Interrupt Handling Simulation** - Written in C, it processes trace files that describe a sequence of CPU instructions, system calls, and I/O events. It simulates process creation, execution, and memory management, incorporating Process Control Block (PCB) Scheduling and Fixed Partition Memory Allocation.
+2. **Log Analysis** - A Python script analyzes the simulator’s execution logs to calculate CPU, I/O, and overhead ratios. The results are then exported to an Excel sheet for performance analysis.
+3. **Automation** - Shell scripts are used to compile and run the simulator with different trace files, facilitating easy testing, simulation, and data generation. The simulation also supports dynamic memory management during process execution.
 
 ## Project Structure
 
