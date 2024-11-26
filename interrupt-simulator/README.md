@@ -2,20 +2,21 @@
 # Interrupt Simulator Project
 
 ## Overview
-The Interrupt Simulator is a project developed to simulate the behavior of an operating system’s interrupt handling mechanism and process scheduling.
-It allows users to simulate and analyze how interrupts are processed—from when they are triggered to when they are handled by the appropriate
-Interrupt Service Routine (ISR)—while also managing process control and memory allocation.
+The Interrupt Simulator is a project developed to simulate the behavior of an operating system’s interrupt handling mechanism
+and process scheduling. It allows users to simulate and analyze how interrupts are processed—from when they are triggered to
+when they are handled by the appropriate Interrupt Service Routine (ISR)—while also managing process control and memory allocation.
 
-This project has been enhanced to incorporate Process Control Block (PCB) Scheduling, where each process in the system is represented by a PCB that
-contains information about the process, such as its ID, program name, allocated memory partition, and remaining CPU time.
-This allows for dynamic scheduling of processes and more accurate simulation of system behavior under different conditions.
+This project has been enhanced to incorporate Process Control Block (PCB) Scheduling, where each process in the system is
+represented by a PCB that contains information about the process, such as its ID, program name, allocated memory partition,
+and remaining CPU time. This allows for dynamic scheduling of processes and more accurate simulation of system behavior under
+different conditions.
 
-Additionally, the simulator includes Fixed Partition Memory Management, where processes are allocated memory partitions based on available space,
-and memory usage is tracked throughout the simulation.
+Additionally, the simulator includes Fixed Partition Memory Management, where processes are allocated memory partitions based
+on available space, and memory usage is tracked throughout the simulation.
 
 Developed in C, this project demonstrates proficiency in low-level systems programming, including handling input/output operations,
-managing interrupts, scheduling processes, and simulating memory management techniques. It provides an in-depth view of how an operating
-system handles processes, memory, and interrupts in a controlled environment.
+managing interrupts, scheduling processes, and simulating memory management techniques. It provides an in-depth view of how an
+operating system handles processes, memory, and interrupts in a controlled environment.
 
 ## Features
 - **Interrupt Handling Simulation**: Simulates various interrupt types such as CPU tasks, system calls, and I/O interrupts.
