@@ -92,25 +92,18 @@ The system_status file logs the state of the system during the simulation:
 ### Running the Interrupt Simulator
 
 1. **Compile the Simulator**:
-   Use the provided `test1.sh` to compile and run the simulator with the sample trace file:
+   Use the provided `test.sh` to compile and run the simulator with the sample trace file:
    ```bash
-   bash test1.sh
+   bash test.sh
    ```
-   This will produce an execution log (e.g., `execution1.txt`), showing a sequence of CPU operations, system calls, and I/O interactions.
+   This will produce an execution log (e.g., `execution.txt` and `system_status.txt`), showing a sequence of CPU operations, system calls, and I/O interactions.
 
 2. **Analyzing the Execution Log**:
    Run the Python analysis script to generate a report:
    ```bash
-   python execution_analyzer.py execution1.txt execution1_summary.xlsx
+   python execution_analyzer.py execution.txt execution_summary.xlsx
    ```
-
-## Skills Demonstrated
-
-- **Systems Programming**: Simulated interrupt handling in C.
-- **File I/O and Parsing**: Handled trace and log files in both C and Python.
-- **Data Analysis**: Generated performance reports using Python libraries.
-- **Automation with Shell Scripting**: Automated compilation and execution.
-
+   
 ## Debugging Techniques
 
 1. **Print Statements**: Traced the flow of the program by printing key variables like time and action.
